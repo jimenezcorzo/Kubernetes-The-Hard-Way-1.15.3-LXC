@@ -33,7 +33,7 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 ## Main Tasks Lists
 
 - [Prerequisites](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/01-Requisites-md)
-- The Stacked Control Plane nodes for HA 
+- [The Stacked Control Plane nodes for HA ](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/02-Stacked-Control-Plane.md)
 - Provisioning the LXC Containers
 - Installing and configuring the HAPROXY LoadBalancer
 - Provisioning the CA and Generating TLS Certificates
