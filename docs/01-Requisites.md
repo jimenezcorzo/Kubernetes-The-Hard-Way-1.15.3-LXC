@@ -44,7 +44,7 @@ Server version: 3.17
 We won't worry on this lab about how to install LXC containers. The default configuration is enough:
 ```
 # lxd init
-ill be activated by:  lxd.socket
+...
 LXD has been successfully configured.
 ```
 Please select dir for the storage backend:
@@ -53,5 +53,5 @@ Name of the storage backend to use (dir or zfs) [default=dir]
 ```
 
 
-
+# 
 Return to: [main menu](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/Readme.md)
