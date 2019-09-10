@@ -6,8 +6,13 @@ I did this lab as part of my studies to achieve the **Kubernetes Certified Admin
 
 > You should not develop a similar environment for production purposes, *happy learning!* 
 
-**Note:** It is important to mention that I did this tutotrial, taking as reference two main previous works.
+**Note:** It is important to mention that I did this tutotrial, taking as reference two main previous works:
+1. [kelseyhightower kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way) Oriented to **Google Cloud Platform.**
+2. [Justmeandopensource video part 1](https://youtu.be/NvQY5tuxALY?list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0) Oriented to LXC Bare Metal - *Explanation Video* 
+3. [Justmeandopensource video part 2](https://youtu.be/2bVK-e-GuYI?list=PL34sAs7_26wNBRWM6BDhnonoA5FMERax0) *Hands On Video* 
 
+## My contribution 
+I am doing this tutorial with latest version of Kubernetes available at the creation of this lab **v1.15.3**, using **openssl tool** instead the cfssl and cfssljson tools, to generate the TLS certificates, and also I am doing the lab using **LXC containers** instead of Virtual Machines, or any commercial Cloud Platform. 
 
 ## Kubernetes Cluster details
 
