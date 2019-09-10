@@ -6,18 +6,40 @@ I did this lab as part of my studies to achieve the **Kubernetes Certified Admin
 
 > You should not develop a similar environment for production purposes, *happy learning!* 
 
+**Note:** It is important to mention that I did this tutotrial, taking as reference two main previous works.
+
+
 ## Kubernetes Cluster details
 
 **Baremetal Host**
-OS: Ubuntu 19.04
-LXC: 3.17
+- OS: Ubuntu 19.04
+- LXC: 3.17
+- Containers running: ubuntu/18.04
 
 **Kubernetes Cluster**
-Kubernetes components: v15.3
-containerd: v1.2.9 
-Container Runtime: v1.0.0-rc8
-gVisor: 50c283b9f56bb7200938d9e207355f05f79f0d17
-CNI Container Networking:  v0.6.0
-etcd: v3.4.0
-CoreDNS: v1.2.2
+- Kubernetes components: v15.3, [kube-apiserver](https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-apiserver), [kube-controller-manager](https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-controller-manager), [kube-scheduler](https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-scheduler), [kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl), [kube-proxy](https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kube-proxy), [kubelet](https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubelet)
+- containerd: [v1.2.9](https://github.com/containerd/containerd/releases/download/v1.2.9/containerd-1.2.9.linux-amd64.tar.gz)
+- Container Runtime: [v1.0.0-rc8](https://github.com/opencontainers/runc/releases/download/v1.0.0-rc8/runc.amd64)
+- gVisor: [50c283b9f56bb7200938d9e207355f05f79f0d17](https://storage.googleapis.com/kubernetes-the-hard-way/runsc-50c283b9f56bb7200938d9e207355f05f79f0d17)
+- CNI Container Networking:  [v0.6.0](https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz)
+- etcd: [v3.4.0](https://github.com/etcd-io/etcd/releases/download/v3.4.0/etcd-v3.4.0-linux-amd64.tar.gz)
+- CoreDNS: [v1.2.2](https://storage.googleapis.com/kubernetes-the-hard-way/coredns.yaml)
 
+## Main Tasks Lists
+
+- Prerequisites
+- The Stacked Control Plane nodes for HA 
+- Provisioning the LXC Containers
+- Installing and configuring the HAPROXY LoadBalancer
+- Provisioning the CA and Generating TLS Certificates
+- Generating Kubernetes Configuration Files for Authentication
+- Generating the Data Encryption Config and Key
+- Bootstrapping the etcd Cluster
+- Bootstrapping the Kubernetes Control Plane
+- Bootstrapping the Kubernetes Worker Nodes
+- Configuring kubectl for Remote Access
+- Provisioning Pod Network Routes
+- Deploying the DNS Cluster Add-on
+- Some Kubernetes testing activities
+- Cleaning Up
+- References and acknowledgments
