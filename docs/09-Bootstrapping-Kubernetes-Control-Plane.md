@@ -184,7 +184,7 @@ server {
 }
 EOF
 ```
-Put the web service configuration file on the www seb service:
+Put the web service configuration file on the www web service:
 ```
   mv kubernetes.default.svc.cluster.local \
     /etc/nginx/sites-available/kubernetes.default.svc.cluster.local
