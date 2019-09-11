@@ -2,10 +2,12 @@
 
 This task is a bit long, and includes the Provision of the Kubernetes Control Plane - Controller Managers (Master nodes)-.
 
-**Note:** The Following tasks need to be executed on the three Controller Managers. You can use tmux or manually. 
+**Note:** The Following tasks need to be executed on the *three Controller Managers*. You can use tmux or manually. 
 
 ## Download and Install the Kubernetes Controller Binaries
 
+>**On controller-0, controller-1 and controller-2**
+\
 Create the main config folder:
 ```
 mkdir -p /etc/kubernetes/config
