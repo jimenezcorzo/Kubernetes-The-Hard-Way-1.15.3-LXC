@@ -7,7 +7,7 @@ This task is a bit long, and includes the Provision of the Kubernetes Control Pl
 ## Download and Install the Kubernetes Controller Binaries
 
 >**On controller-0, controller-1 and controller-2**
-\
+# 
 Create the main config folder:
 ```
 mkdir -p /etc/kubernetes/config
@@ -195,6 +195,8 @@ Enable and Start the nginx service
 systemctl enable nginx
 systemctl restart nginx
 ```
+# 
+
 ## Verification from Baremetal HOST
 
 
