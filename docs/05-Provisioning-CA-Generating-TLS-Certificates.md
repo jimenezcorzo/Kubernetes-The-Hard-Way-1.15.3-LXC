@@ -23,7 +23,8 @@ We need to generate TLS certificates for the following components:
 - kube-scheduler
 - kubelet
 - kube-proxy.
-An also, we need to create our own CA Certificate Authority. 
+\
+Also, we need to create our own CA Certificate Authority. 
 
 ## The process of generating a TSL certificate using openssl
 
@@ -37,7 +38,7 @@ The process has 3 stages identified:
 
 ## The Certificate Authority
 
-Absolutely needed to generate the rest of TLS certificates. For CA generation, no CSR stage is needed:
+Absolutely needed to generate the rest of TLS certificates. For CA generation, *no CSR stage is needed*:
 
 ```
 openssl genrsa -out ca.key 2048
@@ -82,14 +83,16 @@ openssl genrsa -out admin.key 2048
 openssl req -new -key admin.key -subj "/CN=admin/O=system:masters/OU=Kubernetes" -out admin.csr
 openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 365 -out admin.crt
 ```
+output:
+```
+admin.key
+admin.csr
+admin.crt
+```
 ## The Worker nodes
 
 ### Node 0:
-```
-openssl genrsa -out worker-0.key 2048
-openssl req -new -key worker-0.key -out worker-0.csr -config csr-worker-0.cnf
-openssl x509 -req -in worker-0.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out worker-0.crt  -days 365 -extensions v3_ext -extfile csr-worker-0.cnf
-```
+
 #### Creating the information file: csr-worker-0.cnf
 ```
 [ req ]
@@ -122,14 +125,20 @@ keyUsage=keyEncipherment,dataEncipherment
 extendedKeyUsage=serverAuth,clientAuth
 subjectAltName=@alt_names
 ```
+Generating the certificates
+```
+openssl genrsa -out worker-0.key 2048
+openssl req -new -key worker-0.key -out worker-0.csr -config csr-worker-0.cnf
+openssl x509 -req -in worker-0.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out worker-0.crt  -days 365 -extensions v3_ext -extfile csr-worker-0.cnf
+```
+output:
+```
+worker-0.key
+worker-0.csr
+worker-0.crt
+```
 
 ### Node 1:
-```
-openssl genrsa -out worker-1.key 2048
-openssl req -new -key worker-1.key -out worker-1.csr -config csr-worker-1.cnf
-openssl x509 -req -in worker-1.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out worker-1.crt  -days 365 -extensions v3_ext -extfile csr-worker-1.cnf
-```
-
 #### Creating the information file: csr-worker-1.cnf
 ```
 [ req ]
@@ -162,14 +171,19 @@ keyUsage=keyEncipherment,dataEncipherment
 extendedKeyUsage=serverAuth,clientAuth
 subjectAltName=@alt_names
 ```
-
+Generating the certificates
+```
+openssl genrsa -out worker-1.key 2048
+openssl req -new -key worker-1.key -out worker-1.csr -config csr-worker-1.cnf
+openssl x509 -req -in worker-1.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out worker-1.crt  -days 365 -extensions v3_ext -extfile csr-worker-1.cnf
+```
+output:
+```
+worker-1.key
+worker-1.csr
+worker-1.crt
+```
 ### Node 2:
-```
-openssl genrsa -out worker-2.key 2048
-openssl req -new -key worker-2.key -out worker-2.csr -config csr-worker-2.cnf
-openssl x509 -req -in worker-2.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out worker-2.crt  -days 365 -extensions v3_ext -extfile csr-worker-2.cnf
-```
-
 #### Creating the information file: csr-worker-2.cnf
 ```
 [ req ]
@@ -202,6 +216,19 @@ keyUsage=keyEncipherment,dataEncipherment
 extendedKeyUsage=serverAuth,clientAuth
 subjectAltName=@alt_names
 ```
+Generating the certificates
+```
+openssl genrsa -out worker-2.key 2048
+openssl req -new -key worker-2.key -out worker-2.csr -config csr-worker-2.cnf
+openssl x509 -req -in worker-2.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out worker-2.crt  -days 365 -extensions v3_ext -extfile csr-worker-2.cnf
+```
+output:
+```
+worker-2.key
+worker-2.csr
+worker-2.crt
+```
+
 
 ## Controllers:
 ```
