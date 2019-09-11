@@ -36,7 +36,7 @@ backend k8s
     server controller-1 10.12.91.148:6443 check
     server controller-2 10.12.91.175:6443 check
 ```
-**Explanation:** We will recieve incoming traffic (at **tcp** protocol level) on apiserverlb container with IP: 10.12.91.252 and Port: 6443 (apiserver), and distribute it using a roundrobin algorithm, across the three containers controller-0, controller-1, and controller-2 using the same port. 
+**Explanation:** We will receive incoming traffic (at **tcp** protocol level) on apiserverlb container with IP: 10.12.91.252 and Port: 6443 (apiserver), and distribute it using a roundrobin algorithm, across the three containers controller-0, controller-1, and controller-2 using the same port. 
 
 Let's start the service:
 ```
