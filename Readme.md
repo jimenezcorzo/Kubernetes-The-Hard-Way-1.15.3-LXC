@@ -38,7 +38,7 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 - [Installing and configuring the HAPROXY LoadBalancer](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/04-Installing-configuring-HAPROXY-LoadBalancer.md)
 - [Provisioning the CA and Generating TLS Certificates](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/05-Provisioning-CA-Generating-TLS-Certificates.md)
 - [Generating Kubernetes Configuration Files for Authentication](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/06-Generating-Kubernetes-Configuration-Files.md)
-- Generating the Data Encryption Config and Key
+- [Generating the Data Encryption Config and Key](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/07-Generating-Data-Encryption-Config-Key.md)
 - Bootstrapping the etcd Cluster
 - Bootstrapping the Kubernetes Control Plane
 - Bootstrapping the Kubernetes Worker Nodes
