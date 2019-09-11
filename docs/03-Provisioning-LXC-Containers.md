@@ -130,6 +130,12 @@ Listing the created containers:
 | worker-2     | RUNNING | 10.12.91.233 (eth0)  | fd42:dad8:7f46:dd67:216:3eff:fe58:9f65 (eth0) | PERSISTENT | 0         |
 +--------------+---------+----------------------+-----------------------------------------------+------------+-----------+
 ```
+## Connecting to each container for testing
+```
+# lxc exec controller-0 bash
+root@controller-0:~# hostname
+controller-0
+```
 
 We are ready now with the needed infrastructure!
 
