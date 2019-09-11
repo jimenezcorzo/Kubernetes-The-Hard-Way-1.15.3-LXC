@@ -34,9 +34,11 @@ The process has 3 stages identified:
 3. Generating the **Public certificate**, using the information identified on the csr phase
 
 **Note 1:** Some cases the amount of information neeed to generate the csr and crt files are big, then we can use info.config
+\
 **Note 2:** By convention the name of the certificate **.crt** is usually the **public certificate**, and **.key** is the **private key**. 
+\
 **Note 3:** Keep in mind that communication between workers and apiserver is trought the load balancer, in this case apiserverlb container, this is the reason the IP is pointed by certificates instead each controller ip addresses.
-
+\
 ## The Certificate Authority
 
 Absolutely needed to generate the rest of TLS certificates. For CA generation, *no CSR stage is needed*:
