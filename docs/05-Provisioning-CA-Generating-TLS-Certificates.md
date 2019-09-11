@@ -38,7 +38,7 @@ The process has 3 stages identified:
 **Note 2:** By convention the name of the certificate **.crt** is usually the **public certificate**, and **.key** is the **private key**. 
 \
 **Note 3:** Keep in mind that communication between workers and apiserver is trought the load balancer, in this case apiserverlb container, this is the reason the IP is pointed by certificates instead each controller ip addresses.
-\
+
 ## The Certificate Authority
 
 Absolutely needed to generate the rest of TLS certificates. For CA generation, *no CSR stage is needed*:
@@ -249,6 +249,12 @@ openssl genrsa -out kube-controller-manager.key 2048
 openssl req -new -key kube-controller-manager.key -subj "/CN=system:kube-controller-manager/O=system:kube-controller-manager/OU=Kubernetes" -out kube-controller-manager.csr
 openssl x509 -req -in kube-controller-manager.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 365 -out kube-controller-manager.crt
 ```
+output:
+```
+kube-controller-manager.key
+kube-controller-manager.csr
+kube-controller-manager.crt
+```
 
 ## Proxy:
 ```
@@ -256,12 +262,24 @@ openssl genrsa -out kube-proxy.key 2048
 openssl req -new -key kube-proxy.key -subj "/CN=system:kube-proxy/O=system:node-proxier/OU=Kubernetes" -out kube-proxy.csr
 openssl x509 -req -in kube-proxy.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 365 -out kube-proxy.crt
 ```
+output:
+```
+kube-proxy.key
+kube-proxy.csr
+kube-proxy.crt
+```
 
 ## Scheduler:
 ```
 openssl genrsa -out kube-scheduler.key 2048
 openssl req -new -key kube-scheduler.key -subj "/CN=system:kube-scheduler/O=system:kube-scheduler/OU=Kubernetes" -out kube-scheduler.csr
 openssl x509 -req -in kube-scheduler.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 365 -out kube-scheduler.crt
+```
+output:
+```
+kube-scheduler.key
+kube-scheduler.csr
+kube-scheduler.crt
 ```
 
 ## APISERVER
@@ -324,12 +342,24 @@ openssl genrsa -out apiserver.key 2048
 openssl req -new -key apiserver.key -out apiserver.csr -config csr.conf
 openssl x509 -req -in apiserver.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out apiserver.crt -days 365 -extensions v3_ext -extfile csr.conf
 ```
+output:
+```
+apiserver.key
+apiserver.csr
+apiserver.crt
+```
 
 ## Service Account:
 ```
 openssl genrsa -out sa.key 2048
 openssl req -new -key sa.key -subj "/CN=service-accounts/O=kubernetes/OU=Kubernetes" -out sa.csr
 openssl x509 -req -in sa.csr -CA ca.crt -CAkey ca.key -CAcreateserial -days 365 -out sa.crt
+```
+output:
+```
+sa.key
+sa.csr
+sa.crt
 ```
 ## Transfering the certificates into the LXC Controller Managers containers
 
