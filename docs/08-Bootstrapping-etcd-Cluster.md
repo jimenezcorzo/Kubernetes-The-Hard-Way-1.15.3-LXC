@@ -17,12 +17,15 @@ wget -q --show-progress --https-only --timestamping "https://github.com/etcd-io/
 ## Variables needed on each controller
 
 INTERNAL_IP=10.12.91.206
+\
 ETCD_NAME=$(hostname -s)
 
 INTERNAL_IP=10.12.91.148
+\
 ETCD_NAME=$(hostname -s)
 
 INTERNAL_IP=10.12.91.175
+\
 ETCD_NAME=$(hostname -s)
 
 ## ON EACH CONTROLLER-0-1-2, to create the systemd information to start the etcd service
@@ -79,11 +82,6 @@ sudo ETCDCTL_API=3 etcdctl member list \
 ```
 ### The Results:
 ```
-# sudo ETCDCTL_API=3 etcdctl member list \
->   --endpoints=https://10.12.91.175:2379 \
->   --cacert=/etc/etcd/ca.crt \
->   --cert=/etc/etcd/apiserver.crt \
->   --key=/etc/etcd/apiserver.key
 3673a7c549e4cddc, started, controller-2, https://10.12.91.175:2380, https://10.12.91.175:2379, false
 5522dcb0ee08a0fa, started, controller-1, https://10.12.91.148:2380, https://10.12.91.148:2379, false
 709d6baeb9a63ba5, started, controller-0, https://10.12.91.206:2380, https://10.12.91.206:2379, false
