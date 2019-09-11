@@ -1,5 +1,13 @@
 # Bootstrapping the etcd Cluster
 
+
+**Note:** The Following tasks need to be executed on the *three Controller Managers*. You can use tmux or manually. 
+
+
+>**On controller-0, controller-1 and controller-2**
+# 
+
+
 ## Download the etcd 
 ```
 wget -q --show-progress --https-only --timestamping "https://github.com/etcd-io/etcd/releases/download/v3.4.0/etcd-v3.4.0-linux-amd64.tar.gz"
