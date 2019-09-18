@@ -49,8 +49,11 @@ Installing the worker nodes binaries:
 Configure the POD_CIDR environment variable, one for each node:
 
 > POD_CIDR=10.200.0.0/24
+\
 > POD_CIDR=10.200.1.0/24
+\
 > POD_CIDR=10.200.2.0/24
+\
 
 Create the **bridge network** configuration file:
 ```
@@ -331,8 +334,8 @@ worker-2   Ready    <none>   8d    v1.15.3
 \
 \
 \
-
-**Note: **
+# 
+**Note:**
 ```
 ************************
 If you selected Ubuntu 16.0 as the LXC OS for your nodes, then a link need to be created:
