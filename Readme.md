@@ -42,7 +42,7 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 - [Bootstrapping the etcd Cluster](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/08-Bootstrapping-etcd-Cluster.md)
 - [Bootstrapping the Kubernetes Control Plane](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/09-Bootstrapping-Kubernetes-Control-Plane.md)
 - [Bootstrapping the Kubernetes Worker Nodes](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/10-Bootstrapping-Kubernetes-Worker-Nodes.md)
-- Configuring kubectl for Remote Access
+- [Configuring kubectl for Remote Access](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/11-Configuring-kubectl-Remote-Access.md)
 - Provisioning Pod Network Routes
 - Deploying the DNS Cluster Add-on
 - Some Kubernetes testing activities
