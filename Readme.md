@@ -41,7 +41,7 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 - [Generating the Data Encryption Config and Key](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/07-Generating-Data-Encryption-Config-Key.md)
 - [Bootstrapping the etcd Cluster](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/08-Bootstrapping-etcd-Cluster.md)
 - [Bootstrapping the Kubernetes Control Plane](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/09-Bootstrapping-Kubernetes-Control-Plane.md)
-- Bootstrapping the Kubernetes Worker Nodes
+- [Bootstrapping the Kubernetes Worker Nodes](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/10-Bootstrapping-Kubernetes-Worker-Nodes.md)
 - Configuring kubectl for Remote Access
 - Provisioning Pod Network Routes
 - Deploying the DNS Cluster Add-on
