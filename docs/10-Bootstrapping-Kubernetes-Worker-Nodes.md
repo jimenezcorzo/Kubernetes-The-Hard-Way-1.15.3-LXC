@@ -53,7 +53,7 @@ Configure the POD_CIDR environment variable, one for each node:
 > POD_CIDR=10.200.1.0/24
 \
 > POD_CIDR=10.200.2.0/24
-\
+
 
 Create the **bridge network** configuration file:
 ```
@@ -333,7 +333,7 @@ worker-2   Ready    <none>   8d    v1.15.3
 ```
 \
 \
-\
+
 # 
 **Note:**
 ```
