@@ -1,7 +1,6 @@
 # Some Helpful Troubleshooting Commands
 
-In case you need to do some troubleshooting during the deployment of your Kubernetes Cluster "The Hard Way", I leave you below some useful commands.
-
+In case you need to do some troubleshooting during the deployment of your Kubernetes Cluster "The Hard Way", I am leaving to you some useful commands, and some use cases.
 
 
 
