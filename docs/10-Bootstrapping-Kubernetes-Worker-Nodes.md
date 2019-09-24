@@ -153,6 +153,8 @@ For worker-2:
   mv worker-2.kubeconfig /var/lib/kubelet/kubeconfig
   mv ca.crt /var/lib/kubernetes/
 ```
+> **Note:** I used the Google DNS: 8.8.8.8 for Containers resolution, to avoid the need to deploy a DNS solution. 
+
 Create the **kubelet-config.yaml** configuration file:
 For worker-0:
 ```
@@ -170,7 +172,7 @@ authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
 clusterDNS:
-  - "10.32.0.10"
+  - "8.8.8.8"
 podCIDR: "${POD_CIDR}"
 resolvConf: "/run/systemd/resolve/resolv.conf"
 runtimeRequestTimeout: "15m"
@@ -194,7 +196,7 @@ authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
 clusterDNS:
-  - "10.32.0.10"
+  - "8.8.8.8"
 podCIDR: "${POD_CIDR}"
 resolvConf: "/run/systemd/resolve/resolv.conf"
 runtimeRequestTimeout: "15m"
@@ -218,7 +220,7 @@ authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
 clusterDNS:
-  - "10.32.0.10"
+  - "8.8.8.8"
 podCIDR: "${POD_CIDR}"
 resolvConf: "/run/systemd/resolve/resolv.conf"
 runtimeRequestTimeout: "15m"
