@@ -374,6 +374,7 @@ REVISION  CHANGE-CAUSE
 3         kubectl run webapp --image=nginx:1.17.3 --port=80 --expose=true --replicas=3 --record=true
 #
 ```
+#
 
 Testing POD DNS resolution, installing some package
 
@@ -500,9 +501,73 @@ exit
 
 # 
 ```
+#
 
-
-
+Testing pods inter communication
+```
+# kubectl get pods -o wide
+NAME                     READY   STATUS    RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+testing-pod              1/1     Running   0          9m38s   10.200.2.18   worker-2   <none>           <none>
+webapp-795bbd7d8-csd2c   1/1     Running   0          37m     10.200.0.17   worker-0   <none>           <none>
+webapp-795bbd7d8-vpwhk   1/1     Running   0          37m     10.200.2.17   worker-2   <none>           <none>
+webapp-795bbd7d8-xp2fj   1/1     Running   0          37m     10.200.1.17   worker-1   <none>           <none>
+```
+Connecting to one pod, and testing connectivity to the other two pods inside the webapp deployment
+```
+# kubectl exec -it webapp-795bbd7d8-csd2c bash
+root@webapp-795bbd7d8-csd2c:/# hostname
+webapp-795bbd7d8-csd2c
+root@webapp-795bbd7d8-csd2c:/# hostname -i
+10.200.0.17
+root@webapp-795bbd7d8-csd2c:/# ping 10.200.1.17
+PING 10.200.1.17 (10.200.1.17) 56(84) bytes of data.
+64 bytes from 10.200.1.17: icmp_seq=1 ttl=62 time=0.224 ms
+64 bytes from 10.200.1.17: icmp_seq=2 ttl=62 time=0.169 ms
+^C
+--- 10.200.1.17 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 0.169/0.196/0.224/0.030 ms
+root@webapp-795bbd7d8-csd2c:/# ping 10.200.2.17
+PING 10.200.2.17 (10.200.2.17) 56(84) bytes of data.
+64 bytes from 10.200.2.17: icmp_seq=1 ttl=62 time=0.235 ms
+64 bytes from 10.200.2.17: icmp_seq=2 ttl=62 time=0.160 ms
+64 bytes from 10.200.2.17: icmp_seq=3 ttl=62 time=0.162 ms
+^C
+--- 10.200.2.17 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 57ms
+rtt min/avg/max/mdev = 0.160/0.185/0.235/0.038 ms
+root@webapp-795bbd7d8-csd2c:/# exit
+exit
+```
+Connecting to another pod, and testing connectivity to the other two pods inside the webapp deployment
+```
+# kubectl exec -it webapp-795bbd7d8-vpwhk bash
+root@webapp-795bbd7d8-vpwhk:/# hostname
+webapp-795bbd7d8-vpwhk
+root@webapp-795bbd7d8-vpwhk:/# hostname -i 
+10.200.2.17
+root@webapp-795bbd7d8-vpwhk:/# ping 10.200.0.17
+PING 10.200.0.17 (10.200.0.17) 56(84) bytes of data.
+64 bytes from 10.200.0.17: icmp_seq=1 ttl=62 time=0.215 ms
+64 bytes from 10.200.0.17: icmp_seq=2 ttl=62 time=0.154 ms
+^C
+--- 10.200.0.17 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 5ms
+rtt min/avg/max/mdev = 0.154/0.184/0.215/0.033 ms
+root@webapp-795bbd7d8-vpwhk:/# ping 10.200.1.17
+PING 10.200.1.17 (10.200.1.17) 56(84) bytes of data.
+64 bytes from 10.200.1.17: icmp_seq=1 ttl=62 time=0.199 ms
+64 bytes from 10.200.1.17: icmp_seq=2 ttl=62 time=0.154 ms
+64 bytes from 10.200.1.17: icmp_seq=3 ttl=62 time=0.270 ms
+^C
+--- 10.200.1.17 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 31ms
+rtt min/avg/max/mdev = 0.154/0.207/0.270/0.050 ms
+root@webapp-795bbd7d8-vpwhk:/# exit
+exit
+root@sbybz220101:~# 
+```
+Adding some other testing in a future...
 
 # 
 Return to: [main menu](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/Readme.md)
