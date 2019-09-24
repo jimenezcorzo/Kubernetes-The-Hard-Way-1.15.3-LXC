@@ -44,6 +44,6 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 - [Bootstrapping the Kubernetes Worker Nodes](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/10-Bootstrapping-Kubernetes-Worker-Nodes.md)
 - [Configuring kubectl for Remote Access](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/11-Configuring-kubectl-Remote-Access.md)
 - [Provisioning Pod Network Routes](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/12-Provisioning-Pod-Network-Routes.md)
-- Some Kubernetes testing activities
+- [Kubernetes testing tasks](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/13-Kubernetes-testing-tasks.md)
 - Cleaning Up
 - Some helpful troubleshooting commands
