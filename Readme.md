@@ -46,4 +46,4 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 - [Provisioning Pod Network Routes](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/12-Provisioning-Pod-Network-Routes.md)
 - [Kubernetes testing tasks](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/13-Kubernetes-testing-tasks.md)
 - [Some helpful troubleshooting commands](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/14-Troubleshooting-commands.md)
-- Cleaning Up
+- [Cleaning Up](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/docs/15-Cleaning-UP.md)
