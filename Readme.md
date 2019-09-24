@@ -28,7 +28,7 @@ I am doing this tutorial with latest version of Kubernetes available at the crea
 - gVisor: [50c283b9f56bb7200938d9e207355f05f79f0d17](https://storage.googleapis.com/kubernetes-the-hard-way/runsc-50c283b9f56bb7200938d9e207355f05f79f0d17)
 - CNI Container Networking:  [v0.6.0](https://github.com/containernetworking/plugins/releases/download/v0.6.0/cni-plugins-amd64-v0.6.0.tgz)
 - etcd: [v3.4.0](https://github.com/etcd-io/etcd/releases/download/v3.4.0/etcd-v3.4.0-linux-amd64.tar.gz)
-- CoreDNS: [v1.2.2](https://storage.googleapis.com/kubernetes-the-hard-way/coredns.yaml)
+
 
 ## Main Tasks Lists
 
