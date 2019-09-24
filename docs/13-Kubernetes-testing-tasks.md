@@ -29,7 +29,7 @@ Showing our infrastructure, Controller Manager Servers, Worker Nodes and Load Ba
 ```
 #
 
-Checking basic information about our brand new cluster:
+## Checking basic information about our brand new cluster:
 ```
 # kubectl cluster-info
 Kubernetes master is running at https://10.12.91.252:6443
@@ -94,7 +94,7 @@ default     service/kubernetes   ClusterIP   10.32.0.1    <none>        443/TCP 
 
 In our case, **the Kubernetes components are not running inside Pods**, they are running on *physical boxes*, also in our case, the servers are in fact **LXC containers**. 
 
-Running a testing pod
+## Running a testing pod
 ```
 # kubectl run --generator=run-pod/v1 webapp --image nginx --port 80
 pod/webapp created
@@ -159,7 +159,7 @@ No resources found.
 ```
 #
 
-Testing a new deployment
+## Testing a new deployment
 ```
 # kubectl run webapp --image nginx:1.17.3 --port 80 --expose --replicas 3 --record
 kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
@@ -262,7 +262,7 @@ Commercial support is available at
 </body>
 </html>
 ```
-Checking the rollout history of the deployment
+### Checking the rollout history of the deployment and scaling
 ```
 # kubectl rollout history deployment.apps/webapp
 deployment.apps/webapp 
@@ -295,7 +295,7 @@ webapp-795bbd7d8-77ggn   1/1     Running   0          9m27s   10.200.0.14   work
 webapp-795bbd7d8-7ltdh   1/1     Running   0          9m27s   10.200.1.14   worker-1   <none>           <none>
 root@sbybz220101:~# 
 ```
-Testing deployment rollout and rollback
+### Testing deployment rollout and rollback
 ```
 # kubectl rollout history deployment.apps/webapp
 deployment.apps/webapp 
@@ -336,7 +336,7 @@ webapp-8544985cc7-dnxgx   1/1     Running   0          45s   10.200.1.16   worke
 webapp-8544985cc7-nnffw   1/1     Running   0          36s   10.200.0.16   worker-0   <none>           <none>
 
 ```
-Verifying the rollout application
+### Verifying the rollout application
 ```
 # kubectl rollout status deployment.v1.apps/webapp
 deployment "webapp" successfully rolled out
@@ -348,7 +348,7 @@ REVISION  CHANGE-CAUSE
 2         kubectl set image deployment.v1.apps/webapp webapp=nginx:1.17.0 --record=true
 
 ```
-Rolling back
+### Rolling back
 ```
 # kubectl rollout undo deployment.v1.apps/webapp
 deployment.apps/webapp rolled back
@@ -376,7 +376,7 @@ REVISION  CHANGE-CAUSE
 ```
 #
 
-Testing POD DNS resolution, installing some package
+## Testing POD DNS resolution, installing some package
 
 ```
 # kubectl run --generator=run-pod/v1 testing-pod --image nginx
@@ -503,7 +503,7 @@ exit
 ```
 #
 
-Testing pods inter communication
+## Testing pods inter communication
 ```
 # kubectl get pods -o wide
 NAME                     READY   STATUS    RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
@@ -567,7 +567,7 @@ root@webapp-795bbd7d8-vpwhk:/# exit
 exit
 root@sbybz220101:~# 
 ```
-Adding some other testing in a future...
+> Adding some other testing in a future...
 
 # 
 Return to: [main menu](https://github.com/jimenezcorzo/Kubernetes-The-Hard-Way-15.3-LXC/blob/master/Readme.md)
